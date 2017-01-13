@@ -1,0 +1,59 @@
+<!doctype html>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<link href='dist/horsey.css' rel='stylesheet' type='text/css' />
+<link href='example/example.css' rel='stylesheet' type='text/css' />
+<title>jQuery输入首字母自动完成代码 - 站长素材</title>
+<h1>jQuery输入首字母自动完成代码</h1>
+<div class='examples'>
+  <div class='parent'>
+    <label for='hy'>Enter the name of a fruit: </label>
+    <input id='hy'/>
+    <pre>
+      <code>
+horsey(document.querySelector('input'), {
+  suggestions: ['banana', 'apple', 'orange']
+});
+      </code>
+    </pre>
+  </div>
+</div>
+  <div class='parent'>
+    <label for='ly'>Lazy load the fruits, useful for AJAX! <i>(loading starts when the field is focused)</i></label>
+    <div><i id='lyr'>Being lazy...</i></div>
+    <input id='ly'/>
+    <pre>
+      <code>
+horsey(document.querySelector('input'), {
+  suggestions: function (done) {
+    setTimeout(function () {
+      done(['banana', 'apple', 'orange']);
+    }, 2000);
+  }
+});
+      </code>
+    </pre>
+  </div>
+  <div class='parent'>
+    <label for='kv'>You can also use "key value pairs": </label>
+    <input id='kv'/>
+    <pre>
+      <code>
+horsey(document.querySelector('input'), {
+  suggestions: [
+    { value: 'banana', text: 'Bananas from Amazon Rainforest' },
+    { value: 'apple', text: 'Red apples from New Zealand' },
+    { value: 'orange', text: 'Oranges from Moscow' },
+    { value: 'lemon', text: 'Juicy lemons from Amalfitan Coast' }
+  ]
+});
+      </code>
+    </pre>
+  </div>
+</div>
+<script src='dist/horsey.js'></script>
+<script src='example/example.js'></script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
